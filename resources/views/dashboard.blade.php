@@ -8,13 +8,13 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
-      color: #5a4e7c;
       margin: 0;
       display: flex;
       min-height: 100vh;
       background: linear-gradient(145deg, #f7f3f9, #eae6f1);
       background-size: 400% 400%;
       animation: bodyGradient 15s ease infinite;
+      color: #5a4e7c;
     }
 
     @keyframes bodyGradient {
@@ -25,15 +25,18 @@
 
     .sidebar {
       width: 240px;
-      background: #d9d4e7;
       padding: 30px 20px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
       color: #5a4e7c;
-      border-right: 1px solid #c4bdd4;
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
       border-radius: 0 12px 12px 0;
       animation: floatSidebar 4s ease-in-out infinite alternate;
+      background: rgba(217, 212, 231, 0.3);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      box-shadow: inset 0 0 0.5px rgba(255, 255, 255, 0.2);
     }
 
     @keyframes floatSidebar {
@@ -60,7 +63,6 @@
       -webkit-text-fill-color: transparent;
       animation: gradientMove 12s ease infinite, marqueeMove 10s linear infinite;
       user-select: none;
-      font-family: 'Inter', sans-serif;
     }
 
     @keyframes gradientMove {
@@ -81,26 +83,18 @@
       padding: 12px 16px;
       margin: 8px 0;
       border-radius: 8px;
-      background: #ebe6f2;
+      background: rgba(255, 255, 255, 0.15);
       transition: background 0.3s, color 0.3s;
-      box-shadow: 0 2px 5px rgba(91, 85, 122, 0.15);
     }
 
     .sidebar a:hover {
-      background: linear-gradient(90deg, #bdaed6, #d8cbed, #bdaed6);
-      background-size: 200% auto;
-      animation: sidebarGlow 3s linear infinite;
+      background: rgba(255, 255, 255, 0.3);
       color: #312652;
-    }
-
-    @keyframes sidebarGlow {
-      0% { background-position: 0% 50%; }
-      100% { background-position: 100% 50%; }
     }
 
     .logout-form button {
       width: 100%;
-      background: #f9c7d3;
+      background: rgba(255, 255, 255, 0.15);
       border: 1px solid #f3a9bc;
       padding: 10px;
       border-radius: 8px;
@@ -108,35 +102,33 @@
       font-weight: 600;
       transition: background 0.3s, color 0.3s;
       cursor: pointer;
-      box-shadow: 0 2px 5px rgba(217, 167, 181, 0.4);
     }
 
     .logout-form button:hover {
-      background: #f3a9bc;
-      color: #4b2141;
+      background: rgba(255, 255, 255, 0.3);
     }
 
     .content {
       flex: 1;
       padding: 40px;
       text-align: center;
-      color: #4a3c71;
     }
 
     .top-bar {
       display: flex;
       justify-content: space-between;
-      background-color: #c9c1e3;
       padding: 20px 40px;
       align-items: center;
       border-radius: 12px;
-      color: #3e3260;
       box-shadow: 0 4px 10px rgba(121, 109, 158, 0.1);
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
     }
 
-    .top-bar a,
-    .top-bar button {
-      background-color: #aea1d9;
+    .top-bar a, .top-bar button {
+      background-color: rgba(174, 161, 217, 0.4);
       color: #3e3260;
       padding: 10px 18px;
       border: none;
@@ -145,32 +137,24 @@
       font-weight: 600;
       transition: background 0.3s, color 0.3s;
       cursor: pointer;
-      box-shadow: 0 2px 5px rgba(134, 123, 174, 0.3);
     }
 
-    .top-bar a:hover,
-    .top-bar button:hover {
-      background-color: #9c8ed2;
-      color: #2f244b;
+    .top-bar a:hover, .top-bar button:hover {
+      background-color: rgba(174, 161, 217, 0.7);
     }
 
     .container {
       margin-top: 20px;
-      background: #ebe6f2;
       padding: 40px;
       border-radius: 20px;
-      box-shadow: 0 10px 40px rgba(121, 109, 158, 0.15);
-      border: 1px solid #c4bdd4;
+      background: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 10px 40px rgba(121, 109, 158, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       max-width: 1000px;
       margin-left: auto;
       margin-right: auto;
-      color: #5a4e7c;
-    }
-
-    h1 {
-      margin-bottom: 20px;
-      font-size: 28px;
-      color: #3e3260;
     }
 
     .stats {
@@ -181,24 +165,18 @@
     }
 
     .box {
-      background: #d9d4e7;
+      background: rgba(217, 212, 231, 0.25);
       padding: 20px;
       border-radius: 16px;
       font-size: 18px;
-      border: 1px solid #c4bdd4;
       transition: transform 0.3s ease;
-      box-shadow: 0 3px 7px rgba(121, 109, 158, 0.1);
+      box-shadow: 0 3px 15px rgba(121, 109, 158, 0.1);
       color: #4b3b7a;
       font-weight: 600;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
       position: relative;
       overflow: hidden;
-    }
-
-    .box:hover {
-      transform: translateY(-4px);
-      background: #c4bdd4;
-      color: #312652;
-      box-shadow: 0 6px 14px rgba(121, 109, 158, 0.2);
     }
 
     .box::after {
@@ -217,15 +195,21 @@
       100% { left: 125%; }
     }
 
+    .box:hover {
+      transform: translateY(-4px);
+      background: rgba(196, 189, 212, 0.4);
+    }
+
     #calendar {
       margin: 0 auto;
       max-width: 900px;
-      background: #ebe6f2;
-      border: 1px solid #c4bdd4;
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.3);
       color: #4b3b7a;
       border-radius: 12px;
       overflow: hidden;
       box-shadow: 0 4px 12px rgba(121, 109, 158, 0.1);
+      backdrop-filter: blur(10px);
     }
 
     .fc-daygrid-day.booked {
@@ -238,7 +222,7 @@
       position: fixed;
       bottom: 30px;
       right: 30px;
-      background-color: #aea1d9;
+      background-color: rgba(174, 161, 217, 0.5);
       color: #3e3260;
       width: 56px;
       height: 56px;
@@ -246,31 +230,25 @@
       font-size: 28px;
       text-align: center;
       line-height: 56px;
-      box-shadow: 0 4px 10px rgba(134, 123, 174, 0.4);
+      box-shadow: 0 4px 10px rgba(134, 123, 174, 0.3);
       cursor: pointer;
-      transition: background 0.3s, color 0.3s, transform 0.2s;
+      transition: background 0.3s, transform 0.3s;
       text-decoration: none;
       user-select: none;
       font-weight: 700;
+      backdrop-filter: blur(10px);
       animation: fabPulse 2.5s infinite;
     }
 
-    .fab:hover {
-      background-color: #9c8ed2;
-      color: #2f244b;
-      transform: scale(1.1);
+    @keyframes fabPulse {
+      0% { box-shadow: 0 0 0 0 rgba(174, 161, 217, 0.6); }
+      70% { box-shadow: 0 0 0 10px rgba(174, 161, 217, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(174, 161, 217, 0); }
     }
 
-    @keyframes fabPulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(174, 161, 217, 0.6);
-      }
-      70% {
-        box-shadow: 0 0 0 10px rgba(174, 161, 217, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(174, 161, 217, 0);
-      }
+    .fab:hover {
+      background-color: rgba(174, 161, 217, 0.8);
+      transform: scale(1.1);
     }
   </style>
 </head>
